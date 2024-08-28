@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixels || Photography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ECF0F1; /* Soft White */
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .summary, .experience, .education, .skills, .awards {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .experience li, .education li, .skills li, .awards li {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience li::before, .education li::before, .skills li::before, .awards li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .period {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .skills ul, .awards ul {
+            margin-top: 10px;
+        }
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Precious Memories Photography</div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./resume.html">Resume</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./portfolio.php">Portfolio</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="./login.html">Admin Page</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>RESUME</h1>
+
+        <p>Explore the professional journey and achievements of Pixels. Our team combines artistic vision with technical expertise to deliver stunning photographic results.</p>
+
+        <div class="section">
+            <h2>Summary</h2>
+            <div class="summary">
+                <h3>Precious Memories Photography Team</h3>
+                <p>Passionate and skilled photographers with 5+ years of experience in capturing moments that tell a story. We specialize in wedding, portrait, and event photography, providing high-quality, professional images.</p>
+                <ul>
+                    <li>Tinkune, Kathmandu</li>
+                    <li>(+977) 9800000000</li>
+                    <li>contact@pixelsphotography.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="experience">
+                <h3>Lead Photographer</h3>
+                <ul>
+                    <li>
+                        <div class="title">Precious Memories Photography, Tinkune, Kathmandu</div>
+                        <div class="period">2020 - Present</div>
+                        <ul>
+                            <li>Lead in the creative direction and execution of photography projects.</li>
+                            <li>Manage a team of 5 photographers and oversee project timelines and deliverables.</li>
+                            <li>Ensure high-quality images and client satisfaction through meticulous attention to detail.</li>
+                            <li>Handle project budgets and resource allocation efficiently.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <h3>Advanced Photography Techniques</h3>
+                <ul>
+                    <li>
+                        <div class="title">International School of Photography</div>
+                        <div class="period">2018 - 2019</div>
+                    </li>
+                    <li>
+                        <div class="title">Bachelor of Arts in Visual Arts</div>
+                        <div class="period">Kathmandu University, 2014 - 2018</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li>Expertise in Adobe Photoshop and Lightroom</li>
+                    <li>Proficiency in studio lighting techniques</li>
+                    <li>Advanced knowledge of camera equipment and settings</li>
+                    <li>Creative composition and editing skills</li>
+                    <li>Strong communication and team management abilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Awards & Recognition</h2>
+            <div class="awards">
+                <ul>
+                    <li>Best Wedding Photographer Award - Nepal Photography Awards, 2022</li>
+                    <li>Top 10 Photographers in Nepal - Photography Magazine, 2021</li>
+                    <li>Best Portfolio - International Photography Exhibition, 2020</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact">
+            <p>Contact me:</p>
+            <a href="mailto:contact@preciousmemoriesphotography.com">contact@preciousmemoriesphotography.com</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Precious Memories Photography.com. All rights reserved.</p>
+    </footer>
+</body>
+</html>

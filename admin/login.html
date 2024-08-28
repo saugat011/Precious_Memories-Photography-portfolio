@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Pixels</div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#gallery">About</a></li>
+            <li><a href="#experience">Resume</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="#experience">Portfolio</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="./login/login.html">Admin Page</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit"><a href="./admin/admin.html">Login</a></button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

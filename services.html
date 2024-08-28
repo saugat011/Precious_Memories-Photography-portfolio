@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixels || Photography</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ECF0F1; /* Soft White */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p.description {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    hr {
+      border-top: 2px solid #ccc;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #2C3E50;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: wheat;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: wheat;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .cards {
+        flex-direction: row;
+      }
+
+      .card {
+        width: calc(33.333% - 40px);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        padding: 40px;
+      }
+
+      .card {
+        width: calc(25% - 40px);
+      }
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Precious Memories Photography</div>
+    <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./resume.html">Resume</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./portfolio.php">Portfolio</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        <li><a href="./login.html">Admin Page</a></li>
+    </ul>
+    <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</nav>
+  <div class="container">
+    <h1>SERVICES</h1>
+    <p class="description">Explore the diverse range of professional photography services we offer, designed to capture and enhance your precious moments with creativity and precision.</p>
+    <hr>
+    <div class="cards">
+      <div class="card">
+        <img src="./images/download.png" alt="Photography">
+        <h3>Photography</h3>
+        <p>High-quality photography services for weddings, events, portraits, and more, capturing your special moments with artistic flair.</p>
+      </div>
+      <div class="card">
+        <img src="./images/editor-x3359.jpg" alt="Photo Editing">
+        <h3>Photo Editing</h3>
+        <p>Professional photo editing services to enhance, retouch, and bring out the best in your photographs.</p>
+      </div>
+      <div class="card">
+        <img src="./images/What_is_Portfolio_Management_863d4e70a5.jpg" alt="Portfolio Management">
+        <h3>Portfolio Management</h3>
+        <p>Comprehensive portfolio management services to organize, showcase, and promote your photography work effectively.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Pixels. All rights reserved.</p>
+</footer>
+</body>
+</html>

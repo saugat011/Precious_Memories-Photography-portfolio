@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixels || Photography</title>
+   <style>
+    
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* General styling for the home-content section */
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #ECF0F1; /* Soft White */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the text content */
+.text-content {
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-size: 2.5rem;
+    color: #2C3E50; /* Dark Blue */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #7F8C8D; /* Subtle Gray */
+    margin-bottom: 20px;
+    font-family: 'Verdana', sans-serif;
+}
+
+.text-content .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ECF0F1; /* Soft White */
+    background-color: #2C3E50; /* Dark Blue */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+.text-content .btn:hover {
+    background-color: #D4AF37; /* Muted Gold */
+}
+
+/* Styling for the image content */
+.image-content {
+    max-width: 45%;
+}
+
+.round-image {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Animation for the image to move up and down */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content, .image-content {
+        max-width: 100%;
+    }
+
+    .text-content {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Home Content Section */
+/* .home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.home-content .text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.home-content h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555555;
+}
+
+.home-content .btn {
+    padding: 12px 25px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.home-content .btn:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+.home-content .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.home-content .round-image {
+    width: 100%;
+    max-width: 300px;
+    height: 40vh;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+} */
+
+/* Responsive Styles */
+/* @media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content .text-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .home-content .round-image {
+        max-width: 200px;
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar .hamburger.active + .nav-links {
+        display: flex;
+    }
+} */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    position: relative;
+    bottom: -3px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive styling for footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 5px;
+        font-size: 12px;
+    }
+}
+
+   </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Precious Memories Photography</div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./resume.html">Resume</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./portfolio.php">Portfolio</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="./login.html">Admin Page</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    
+
+    <section id="home" class="home-content">
+        <div class="text-content">
+            <h1>Welcome to Precious Memories Photography</h1>
+            <p>
+                At Precious Memories, we capture moments that last a lifetime. As a team of passionate photographers, we have been
+                transforming visions into reality for the past few years. Our portfolio showcases our dedication to the art of
+                photography, from weddings and events to portraits and commercial projects.
+            </p>
+            <p>
+                We believe in telling stories through our lens, and our work reflects the skills and experiences we’ve gathered
+                over the years. Explore our gallery, learn about our journey, and feel free to get in touch with us for
+                collaborations or bookings.
+            </p>
+            <a href="#gallery" class="btn">View Our Work</a>
+        </div>
+        <div class="image-content">
+            <img src="images/_18608a1e-12d1-4d32-8d1f-4a9c1a607f9f.jpeg" alt="Pixels Photography" class="round-image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Precious Memories Photography.com. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
