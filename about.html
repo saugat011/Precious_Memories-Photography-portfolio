@@ -1,109 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pixels || Photography</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ECF0F1; /* Soft White */
-}
-
-.container {
-  max-width: 1000px;
-  margin: 50px auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.about-text {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.team-info {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 40px;
-}
-
-.team-info-item {
-  text-align: left;
-  width: 45%;
-}
-
-.team-info-item h3 {
-  margin-bottom: 10px;
-}
-
-.team-info-item p {
-  margin-bottom: 5px;
-}
-
-.team-info-item a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.team-info-item a:hover {
-  text-decoration: underline;
-}
-
-.team-photo {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.team-photo img {
-  width: 100%;
-  height: auto;
-}
-
-.team-description {
-  text-align: center;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixels || Photography</title>
+    <style>
+       body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #F5F5F5;
+    line-height: 1.6;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #333;
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #1E1E1E; /* Dark Gray */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
 
-.logo {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FF4081; /* Vibrant Pink */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
 
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    transition: background-color 0.3s;
-}
+        .nav-links li a {
+            color: #E0E0E0;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-.nav-links li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
+        .nav-links li a:hover {
+            background-color: #FF4081; /* Vibrant Pink */
+            color: #121212; /* Dark Background */
+        }
 
-/* Hamburger menu styling */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -115,28 +64,138 @@ h1 {
     height: 3px;
     background-color: #fff;
     margin: 4px 0;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
-/* Responsive styling */
+.container {
+    max-width: 1200px;
+    margin: 50px auto 40px;
+    padding: 20px;
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #FF4081;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #CCCCCC;
+    font-size: 18px;
+}
+
+.team-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-info-item {
+    flex: 1 1 calc(45% - 40px);
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.team-info-item h3 {
+    margin-bottom: 15px;
+    color: #FF4081;
+    font-size: 22px;
+}
+
+.team-info-item p, .team-info-item a {
+    color: #CCCCCC;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.team-info-item a {
+    color: #FF4081;
+    text-decoration: none;
+}
+
+.team-info-item a:hover {
+    text-decoration: underline;
+}
+
+.team-photo {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.team-photo img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team-description {
+    text-align: center;
+    color: #CCCCCC;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #1E1E1E;
+    color: #F5F5F5;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
 @media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0;
-        top: 60px;
-        background-color: #333;
-        width: 100%;
-        height: calc(100vh - 60px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+    .container {
+        margin: 60px 10px 30px;
+        padding: 15px;
     }
 
-    .nav-links.active {
-        transform: translateX(0%);
+    .team-info-item {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    .team-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    .about-text, .team-description {
+        font-size: 16px;
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1E1E1E;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
     }
 
     .hamburger {
@@ -155,26 +214,74 @@ h1 {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 }
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 14px;
-    position: relative;
-    bottom: -8px;
-    width: 100%;
-}
 
-footer p {
-    margin: 0;
-}
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
 
-</style>
+    .container {
+        margin: 50px 5px 20px;
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    .about-text, .team-description {
+        font-size: 14px;
+    }
+
+    .team-info-item {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #1E1E1E;
+                width: 200px;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Precious Memories Photography</div>
+        <div class="logo">PRECIOUS MEMORIES</div>
         <ul class="nav-links">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
@@ -191,42 +298,53 @@ footer p {
         </div>
     </nav>
 
-<div class="container">
-  <h1>ABOUT</h1>
-  <hr style="width: 100%; height: 2px; background-color: #007bff; margin-bottom: 30px;">
-  <div class="about-text">
-   <p>Pixels, a team of seasoned photographers, is passionate about preserving life's most stunning and unforgettable moments. With extensive expertise in diverse photography styles, we are committed to ensuring that every image we capture narrates a distinct and compelling story.</p>
-  </div>
+    <div class="container">
+        <h1>ABOUT</h1>
+        <hr style="width: 80%; height: 2px; background-color: #FF4081; margin: 0 auto 30px;">
+        <div class="about-text">
+            <p>Welcome to Pixels Photography, where we turn moments into memories. With a passion for capturing life's most beautiful and unforgettable experiences, our team of professionals specializes in a wide range of photography styles. Each photo we take tells a unique and compelling story.</p>
+        </div>
 
-  <h2>Professional Photography Team</h2>
-  <div class="team-info">
-    <div class="team-info-item">
-        <p>Our team is deeply passionate about photography and dedicated to delivering top-tier services to our clients. We aim to capture the true essence of each moment, bringing it to life through our lenses.</p>
-      <h3>Years of Experience: 5+</h3>
-      <p>Website: <a href="https://www.preciousmemoriesphotography.com" target="_blank">www.preciousmemoriesphotography.com</a></p>
-      <p>Phone: +977 9800000000</p>
-      <p>City: Tinkune, Kathmandu</p>
+        <h2>Meet Our Team</h2>
+        <div class="team-info">
+            <div class="team-info-item">
+                <h3>Our Expertise</h3>
+                <p>At Pixels, we bring over five years of experience to the table, ensuring that every shot is a masterpiece. Whether it's weddings or portraits, we pour our heart and soul into capturing the essence of each moment.</p>
+                <p><strong>Experience:</strong> 5+ Years</p>
+                <p><strong>Website:</strong> <a href="https://www.preciousmemoriesphotography.com" target="_blank">preciousmemoriesphotography.com</a></p>
+                <p><strong>Contact:</strong> +977 9800000000</p>
+                <p><strong>Location:</strong> Tinkune, Kathmandu</p>
+            </div>
+
+            <div class="team-info-item">
+                <h3>Our Specialties</h3>
+                <p><strong>Focus Areas:</strong> Weddings, Portraits</p>
+                <p><strong>Email:</strong> contact@preciousmemoriesphotography.com</p>
+                <p><strong>Freelance Availability:</strong> Yes</p>
+            </div>
+        </div>
+
+        <div class="team-photo">
+            <img src="./img/photography.jpg" alt="Team Photo">
+        </div>
+
+        <div class="team-description">
+            <p>We believe in the power of photography to capture emotions and tell stories. Our dedication to perfection ensures that every photo is a reflection of the beauty and essence of its subject.</p>
+        </div>
     </div>
 
-    <div class="team-info-item">
-      <h3>Specializations:</h3>
-      <p>Weddings, Portraits</p>
-      <p>Email: contact@preciousmemoriesphotography.com</p>
-      <p>Freelance: Available</p>
-    </div>
-  </div>
+    <footer>
+        <p>&copy; 2024 Pixels Photography. All rights reserved.</p>
+    </footer>
 
-  <div class="team-photo">
-    <img src="./images/Photography_Canva28.webp" alt="Team Photo">
-  </div>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-  <div class="team-description">
-    <p>At Pixels, we believe in the power of photography to capture emotions and tell stories. Our team works tirelessly to ensure that every photograph is a masterpiece, reflecting the beauty and essence of the subject.</p>
-  </div>
-</div>
-<footer>
-    <p>&copy; 2024 Precious Memories Photography.com. All rights reserved.</p>
-</footer>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
-<script src="script.js"></script>
 </html>

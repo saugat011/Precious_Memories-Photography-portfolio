@@ -4,9 +4,6 @@ $servername = "localhost";
 $username = "root"; 
 $password = ""; 
 $dbname = "contact_form_db"; 
-
-
-
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -36,7 +33,4 @@ $conn->close();
 }
 
 // Get the form data
-
-
-
 ?>

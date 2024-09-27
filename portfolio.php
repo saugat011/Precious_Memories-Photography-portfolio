@@ -21,330 +21,231 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixels Photography - Portfolio</title>
-  <style>
-    *{
-    margin: 0;
-    padding: 0;
-    /* overflow-x: hidden; */
-}
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
-/* Navbar styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #333;
-}
-
-.logo {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    transition: background-color 0.3s;
-}
-
-.nav-links li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-/* Hamburger menu styling */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: all 0.3s;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0;
-        top: 60px;
-        background-color: #333;
-        width: 100%;
-        height: calc(100vh - 60px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .nav-links.active {
-        transform: translateX(0%);
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
-
-/* Main content styling */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-p {
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Portfolio section styling */
-.portfolio-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.portfolio-item {
-    width: 300px;
-    margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-}
-
-.portfolio-item .caption {
-    padding: 10px;
-}
-
-.portfolio-item .caption h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.portfolio-item .caption p {
-    margin-bottom: 0;
-}
-
-/* Portfolio navigation styling */
-.portfolio-nav {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.portfolio-nav button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.portfolio-nav button:hover {
-    background-color: #3e8e41;
-}
-
-/* Filterable gallery styling */
-.box {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.store-item {
-    width: 300px;
-    padding: 1rem;
-}
-
-.store-item img {
-    width: 100%;
-    display: block;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Media query for gallery items */
-@media (max-width: 768px) {
-    .store-item {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
-/* Container styling */
-.container {
-width: 100%;
-margin: 0 auto;
-text-align: center;
-padding: 20px;
-background-color: #f4f4f4;
-border-radius: 10px;
-}
-
-/* Menu buttons */
-.menu {
-display: inline-block;
-margin: 10px 0;
-}
-
-.menu .btn {
-text-decoration: none;
-color: #fff;
-background-color: #007bff;
-padding: 10px 20px;
-border-radius: 5px;
-margin: 0 10px;
-font-size: 16px;
-font-weight: bold;
-transition: background-color 0.3s, transform 0.3s;
-display: inline-block;
-cursor: pointer;
-}
-
-/* Hover effect */
-.menu .btn:hover {
-background-color: #0056b3;
-transform: scale(1.05);
-}
-
-/* Active state */
-.menu .btn:active {
-background-color: #003f7f;
-transform: scale(0.95);
-}
-
-/* Active button style */
-.menu .btn.active {
-background-color: #28a745;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-.menu .btn {
-display: block;
-width: 100%;
-margin: 10px 0;
-}
-
-}
-#store-items {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: space-around;
-}
-
-.store-item {
-flex: 1 1 calc(33% - 40px); /* Adjust the percentage as needed for the number of items per row */
-box-sizing: border-box;
-}
-
-.card {
-border: 1px solid #ddd;
-border-radius: 8px;
-overflow: hidden;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
-}
-
-.card:hover {
-transform: scale(1.05);
-}
-
-.card-img {
-width: 100%;
-height: auto;
-display: block;
-}
-
-.card-content {
-padding: 15px;
-}
-
-.card-title {
-font-size: 18px;
-margin: 0 0 10px;
-}
-
-.card-description {
-font-size: 14px;
-color: #666;
-margin: 0;
-}
-
-footer {
-background-color: #333;
-color: #fff;
-text-align: center;
-padding: 20px 10px;
-font-size: 14px;
-position: relative;
-bottom: -155px;
-width: 100%;
-}
-
-footer p {
-margin: 0;
-}
-
-
-  </style>
+    <title>Precious Memories Photography - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            color:#e91e63;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 8px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-links li a:hover {
+            background-color: #e91e63;
+            color: #fff;
+            border-radius: 5px;
+        }
+        /* Hamburger menu styling */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #f5f5f5;
+            margin: 4px 0;
+            transition: all 0.3s;
+        }
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 60px;
+                background-color: #333;
+                width: 100%;
+                height: calc(100vh - 60px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .nav-links.active {
+                transform: translateX(0%);
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+        /* Main content styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e91e63;
+            font-size: 2.5rem;
+        }
+        p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        /* Portfolio section styling */
+        .portfolio-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .portfolio-item {
+            width: 300px;
+            margin: 10px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+        .portfolio-item .caption {
+            padding: 10px;
+        }
+        .portfolio-item .caption h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #e91e63;
+        }
+        .portfolio-item .caption p {
+            margin-bottom: 0;
+            color: #bbb;
+        }
+        /* Portfolio filtering menu styling */
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .menu .btn {
+            text-decoration: none;
+            color: #fff;
+            background-color: #e91e63;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .menu .btn:hover {
+            background-color: #c2185b;
+            transform: scale(1.05);
+        }
+        .menu .btn.active {
+            background-color: #28a745;
+        }
+        #store-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .store-item {
+            flex: 1 1 calc(33% - 40px); /* Adjust the percentage as needed for the number of items per row */
+            box-sizing: border-box;
+        }
+        .card {
+            border: 1px solid #444;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 18px;
+            margin: 0 0 10px;
+            color: #e91e63;
+        }
+        .card-description {
+            font-size: 14px;
+            color: #bbb;
+            margin: 0;
+        }
+        footer {
+            background-color: #333;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 14px;
+            position: relative;
+            bottom: -155px;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Precious Memories Photography</div>
+        <div class="logo">PRECIOUS MEMORIES</div>
         <ul class="nav-links">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
@@ -366,6 +267,7 @@ margin: 0;
         <h1>PORTFOLIO</h1>
         <p>Explore a carefully curated selection of our most captivating work. From the romance of weddings to the tranquility of nature, each photograph reflects our dedication to capturing life's most beautiful moments. Let our lens transform fleeting instants into lasting memories.</p>
     </div>
+    
 
     <!-- Portfolio Filtering Menu -->
     <div class="container">
@@ -378,7 +280,7 @@ margin: 0;
         <div class="box" id="store-items">
             <div class="store-item web">
                 <div class="card">
-                    <img src="img/download13.jpg" class="card-img" alt="Wedding Image 1">
+                    <img src="img/wedding2.jpg" class="card-img" alt="Wedding Image 1">
                     <div class="card-content">
                         <h3 class="card-title">Wedding Image 1</h3>
                         <p class="card-description">A beautiful wedding photo capturing the special moments.</p>
@@ -387,7 +289,7 @@ margin: 0;
             </div>
             <div class="store-item web">
                 <div class="card">
-                    <img src="img/download14.jpg" class="card-img" alt="Wedding Image 2">
+                    <img src="img/wedding3.jpg" class="card-img" alt="Wedding Image 2">
                     <div class="card-content">
                         <h3 class="card-title">Wedding Image 2</h3>
                         <p class="card-description">Another stunning wedding photo with elegant details.</p>
@@ -396,7 +298,7 @@ margin: 0;
             </div>
             <div class="store-item web">
                 <div class="card">
-                    <img src="img/download 15.webp" class="card-img" alt="Wedding Image 3">
+                    <img src="img/wedding1.webp" class="card-img" alt="Wedding Image 3">
                     <div class="card-content">
                         <h3 class="card-title">Wedding Image 3</h3>
                         <p class="card-description">A cherished memory from a wedding event.</p>
@@ -405,7 +307,7 @@ margin: 0;
             </div>
             <div class="store-item logo">
                 <div class="card">
-                    <img src="img/download12.jpeg" class="card-img" alt="Convocation Image 1">
+                    <img src="img/convocation1 copy.jpg" class="card-img" alt="Convocation Image 1">
                     <div class="card-content">
                         <h3 class="card-title">Convocation Image 1</h3>
                         <p class="card-description">A memorable moment from the convocation ceremony.</p>
@@ -414,7 +316,7 @@ margin: 0;
             </div>
             <div class="store-item logo">
                 <div class="card">
-                    <img src="img/download20.jpg" class="card-img" alt="Convocation Image 2">
+                    <img src="img/convocation2.jpg" class="card-img" alt="Convocation Image 2">
                     <div class="card-content">
                         <h3 class="card-title">Convocation Image 2</h3>
                         <p class="card-description">Celebrating achievements at the convocation.</p>
@@ -423,7 +325,7 @@ margin: 0;
             </div>
             <div class="store-item logo">
                 <div class="card">
-                    <img src="img/convocation1.jpg" class="card-img" alt="Convocation Image 3">
+                    <img src="img/convocation3.jpg" class="card-img" alt="Convocation Image 3">
                     <div class="card-content">
                         <h3 class="card-title">Convocation Image 3</h3>
                         <p class="card-description">A highlight from the convocation ceremony.</p>
@@ -432,7 +334,7 @@ margin: 0;
             </div>
             <div class="store-item mobile">
                 <div class="card">
-                    <img src="img/download16.jpeg" class="card-img" alt="Nature Image 1">
+                    <img src="img/nature1.jpg" class="card-img" alt="Nature Image 1">
                     <div class="card-content">
                         <h3 class="card-title">Nature Image 1</h3>
                         <p class="card-description">A serene nature photo showcasing natural beauty.</p>
@@ -441,77 +343,88 @@ margin: 0;
             </div>
             <div class="store-item mobile">
                 <div class="card">
-                    <img src="img/download17.jpg" class="card-img" alt="Nature Image 2">
+                    <img src="img/nature2.jpg" class="card-img" alt="Nature Image 2">
                     <div class="card-content">
                         <h3 class="card-title">Nature Image 2</h3>
                         <p class="card-description">Another breathtaking image of nature.</p>
                     </div>
                 </div>
             </div>
-            <div class="store-item mobile">
+            <!-- <div class="store-item mobile">
                 <div class="card">
-                    <img src="img/nature3.jpg" class="card-img" alt="Nature Image 3">
+                    <img src="img/nature3.jpeg" class="card-img" alt="Nature Image 3">
                     <div class="card-content">
                         <h3 class="card-title">Nature Image 3</h3>
                         <p class="card-description">A captivating nature scene captured in this image.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Portfolio Items -->
-        <div class="box" id="store-items">
-            <?php while($row = $result->fetch_assoc()): ?>
-            <div class="store-item <?php echo htmlspecialchars($row['category']); ?>">
+            </div> -->
+            <div class="store-item mobile">
                 <div class="card">
-                    <img src="images/<?php echo htmlspecialchars($row['image']); ?>" class="card-img" alt="<?php echo htmlspecialchars($row['title']); ?>">
+                    <img src="img/nepalesewedding.jpg" class="card-img" alt="Nature Image 3">
                     <div class="card-content">
-                        <h3 class="card-title"><?php echo htmlspecialchars($row['title']); ?></h3>
-                        <p class="card-description"><?php echo htmlspecialchars($row['description']); ?></p>
+                        <h3 class="card-title">Nepalese Wedding</h3>
+                        <p class="card-description">Nepali bride wedding dresses/ Nepali wedding dress ideas</p>
                     </div>
                 </div>
             </div>
-            <?php endwhile; ?>
+        </div>
+        <div class="box" id="store-items">
+        <?php while($row = $result->fetch_assoc()): ?>
+        <div class="store-item <?php echo !empty($row['category']) ? strtolower($row['category']) : 'no-category'; ?> portfolio-item">
+            <div class="card">
+                <?php if (!empty($row['image_url'])): ?>
+                    <img src="<?php echo htmlspecialchars($row['image_url']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="card-img">
+                <?php else: ?>
+                    <img src="default-image.jpg" alt="Default Image" class="card-img"> <!-- Fallback image -->
+                <?php endif; ?>
+                <div class="card-content">
+                    <h3 class="card-title"><?php echo htmlspecialchars($row['title']); ?></h3>
+                    <p class="card-description"><?php echo htmlspecialchars($row['description']); ?></p>
+                </div>
+            </div>
+        </div>
+    <?php endwhile; ?>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Precious Memories Photography.com. All rights reserved.</p>
+        <p>&copy; 2024 Precious Memories Photography. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Interactive Navbar and Portfolio Filter -->
     <script>
-     (function(){
-    const buttons = document.querySelectorAll('.btn');
-    const storeImages = document.querySelectorAll('.store-item');
+        // Toggle the navbar links on hamburger menu click
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const filter = e.target.dataset.filter;
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
 
-            storeImages.forEach((item) => {
-                if (filter === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    if (item.classList.contains(filter)) {
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.menu .btn');
+        const storeItems = document.querySelectorAll('.store-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const filter = button.getAttribute('data-filter');
+
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                storeItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
                         item.style.display = 'block';
                     } else {
                         item.style.display = 'none';
                     }
-                }
+                });
             });
         });
-    });
-})();
-
-
-
     </script>
 </body>
 </html>
-
-<?php
-$conn->close();
-?>

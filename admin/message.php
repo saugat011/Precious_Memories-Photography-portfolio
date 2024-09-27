@@ -13,7 +13,7 @@
             <h2>Admin Dashboard</h2>
             <ul>
                 <li><a href="./admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                <li><a href="./view.html"><i class="fas fa-users"></i> Users View</a></li>
+                <li><a href="./view.php"><i class="fas fa-users"></i> Users View</a></li>
                 <li><a href="./add.html"><i class="fas fa-user-plus"></i> Users Add</a></li>
                 <li><a href="./message.php"><i class="fas fa-envelope"></i> Messages</a></li> <!-- Changed to .php -->
                 <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
